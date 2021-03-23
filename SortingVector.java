@@ -29,34 +29,31 @@ public class SortingVector {
         ArrayList<String> ColorArrayList = new ArrayList<>(Arrays.asList("Violet", "Red", "Yellow", "Green", "Blue"));
 
         Scanner sc = new Scanner(System.in);
-        boolean flag = true;
         int[] index = new int[nameVector.size()];
 
-        while (flag) {
-            System.out.println("Welcome to the sorting data exercise V2\n\nHere are your choices:");
-            System.out.println("[1] Vector");
-            System.out.println("[2] ArrayList");
-            System.out.println("[3] Sort ID");
-            System.out.println("[4] Find ID ");
+       
+            System.out.println("Your choices:");
+            System.out.println("(Press 1.) Vector");
+            System.out.println("(Press 2.) ArrayList");
+            System.out.println("(Press 3.) Sort ID");
+            System.out.println("(Press 4.) Find ID ");
 
-            System.out.print("Enter your choice >> ");
+            System.out.print("Choose sorting option:-  ");
             int choice = sc.nextInt();
             System.out.println();
 
             switch (choice) {
-                // For Vector
+                // Vector
                 case 1 -> {
-                    System.out.println("You picked Vector!\n\nHere are the sorted vectors:");
+                    System.out.println("Sorted vectors:");
                     
-                            Vector<String> Cl0neName = new Vector<>(nameVector);
+                            Vector<String> cloneName = new Vector<>(nameVector);
 
-                            // Sort Cl0neName with Collections class method
-                            Collections.sort(Cl0neName);
+                            Collections.sort(cloneName);
 
-                            // Sort index according to sorted Cl0neName
                             for (int i = 0; i < nameVector.size(); i++) {
                                 for (int j = 0; j < nameVector.size(); j++) {
-                                    if (nameVector.get(j).equals(Cl0neName.get(i))) {
+                                    if (nameVector.get(j).equals(cloneName.get(i))) {
                                         index[i] = j;
                                     }
                                 }
@@ -64,63 +61,56 @@ public class SortingVector {
                             
                             Vector<String> updated = new Vector<>();
 
-                            // Updating
+                            
                             for (int i = 0; i < index.length; i++) {
                                 updated.add(i, ColorVector.get(index[i]));
                             }
 
-                            System.out.println("Original data:");
-                            for (int i = 0; i < nameVector.size(); i++) {
-                                System.out.printf("%-25s %-10s %n", nameVector.get(i), ColorVector.get(i));
-                            }
-                            System.out.println();
+                        
 
                             System.out.println("Sorted by Name:");
                             for (int i = 0; i < nameVector.size(); i++) {
-                                System.out.printf("%-25s %-10s %n", Cl0neName.get(i), updated.get(i));
+                                System.out.printf("%-25s %-10s %n", cloneName.get(i), updated.get(i));
                             }
                             System.out.println();
 
-                            Vector<String> Cl0neColor = new Vector<>(ColorVector);
+                            Vector<String> cloneColor = new Vector<>(ColorVector);
 
-                            // Sort Cl0neColor with Collections class method
-                            Collections.sort(Cl0neColor);
+                            Collections.sort(cloneColor);
 
-                            // Sort index according to sorted Cl0neColor
                             for (int i = 0; i < ColorVector.size(); i++) {
                                 for (int j = 0; j < ColorVector.size(); j++) {
-                                    if (ColorVector.get(j).equals(Cl0neColor.get(i))) {
+                                    if (ColorVector.get(j).equals(cloneColor.get(i))) {
                                         index[i] = j;
                                     }
                                 }
                             }
 
 
-                            // Updating
                             for (int i = 0; i < index.length; i++) {
                                 updated.add(i, nameVector.get(index[i]));
                             }
 
                             System.out.println("Sorted by Color:");
                             for (int i = 0; i < ColorVector.size(); i++) {
-                                System.out.printf("%-10s %-25s %n", Cl0neColor.get(i), updated.get(i));
+                                System.out.printf("%-10s %-25s %n", cloneColor.get(i), updated.get(i));
                             }
                             System.out.println();
                         }
-                        default -> System.out.println("Not a choice! Try again.");
+                        default -> System.out.println("Not an option! Try again.");
                     
                     
                             case 2 -> {
-                                System.out.println("You picked Vector!\n\nHere are the sorted Array list:");
-                                        ArrayList<String> Cl0neName = new ArrayList<>(nameArrayList);
+                                System.out.println("Sorted Array list:");
+                                        ArrayList<String> cloneName = new ArrayList<>(nameArrayList);
             
-                                        // Sort Cl0neName with Collections class method
-                                        Collections.sort(Cl0neName);
+                                        // Sort cloneName with Collections class method
+                                        Collections.sort(cloneName);
             
-                                        // Sort index according to sorted Cl0neName
+                                        // Sort index according to sorted cloneName
                                         for (int i = 0; i < nameArrayList.size(); i++) {
                                             for (int j = 0; j < nameArrayList.size(); j++) {
-                                                if (nameArrayList.get(j).equals(Cl0neName.get(i))) {
+                                                if (nameArrayList.get(j).equals(cloneName.get(i))) {
                                                     index[i] = j;
                                                 }
                                             }
@@ -133,27 +123,23 @@ public class SortingVector {
                                             updated.add(i, ColorArrayList.get(index[i]));
                                         }
             
-                                        System.out.println("Original data:");
-                                        for (int i = 0; i < nameArrayList.size(); i++) {
-                                            System.out.printf("%-25s %-10s %n", nameArrayList.get(i), ColorArrayList.get(i));
-                                        }
-                                        System.out.println();
+                                    
             
                                         System.out.println("Sorted by Name:");
                                         for (int i = 0; i < nameArrayList.size(); i++) {
-                                            System.out.printf("%-25s %-10s %n", Cl0neName.get(i), updated.get(i));
+                                            System.out.printf("%-25s %-10s %n", cloneName.get(i), updated.get(i));
                                         }
                                         System.out.println();
                                     
-                                        ArrayList<String> Cl0neColor = new ArrayList<>(ColorArrayList);
+                                        ArrayList<String> cloneColor = new ArrayList<>(ColorArrayList);
             
-                                        // Sort Cl0neColor with Collections class method
-                                        Collections.sort(Cl0neColor);
+                                        // Sort cloneColor with Collections class method
+                                        Collections.sort(cloneColor);
             
-                                        // Sort index according to sorted Cl0neColor
+                                        // Sort index according to sorted cloneColor
                                         for (int i = 0; i < ColorArrayList.size(); i++) {
                                             for (int j = 0; j < ColorArrayList.size(); j++) {
-                                                if (ColorArrayList.get(j).equals(Cl0neColor.get(i))) {
+                                                if (ColorArrayList.get(j).equals(cloneColor.get(i))) {
                                                     index[i] = j;
                                                 }
                                             }
@@ -167,20 +153,20 @@ public class SortingVector {
             
                                         System.out.println("Sorted by Color:");
                                         for (int i = 0; i < ColorArrayList.size(); i++) {
-                                            System.out.printf("%-10s %-25s %n", Cl0neColor.get(i), updated.get(i));
+                                            System.out.printf("%-10s %-25s %n", cloneColor.get(i), updated.get(i));
                                         }
                                         System.out.println();
                                     }
                             
                             case 3 -> {
-                                System.out.println("Here are the sorted IDs:");
-                                Object[] Cl0ne = idVector.toArray();
+                                System.out.println("Sorted IDs:");
+                                Object[] clone = idVector.toArray();
             
                                 // Convert from object[] to long[]
-                                Long[] Cl0neLong = Arrays.copyOf(Cl0ne, Cl0ne.length, Long[].class);
+                                Long[] cloneLong = Arrays.copyOf(clone, clone.length, Long[].class);
             
                                 // Sort with Arrays utility class
-                                Arrays.sort(Cl0neLong);
+                                Arrays.sort(cloneLong);
             
                                 System.out.println("Before sorting:");
                                 for (Long aLong : idVector) {
@@ -190,24 +176,24 @@ public class SortingVector {
                                 System.out.println();
             
                                 System.out.println("After sorting:");
-                                for (Long bLong : Cl0neLong) {
+                                for (Long bLong : cloneLong) {
                                     System.out.println(bLong);
                                 }
                                 System.out.println();
                             }
                             case 4 -> {
-                                Object[] Cl0ne = idVector.toArray();
+                                Object[] clone = idVector.toArray();
             
                                 // Convert from object[] to long[]
-                                Long[] Cl0neLong = Arrays.copyOf(Cl0ne, Cl0ne.length, Long[].class);
+                                Long[] cloneLong = Arrays.copyOf(clone, clone.length, Long[].class);
             
-                                System.out.print("Enter ID to check >> ");
+                                System.out.print("Enter ID to check:- ");
                                 long value = sc.nextLong();
             
                                 int indexFound = -1;
             
-                                for (int i = 0; i < Cl0neLong.length; i++) {
-                                    if (value == Cl0neLong[i]) {
+                                for (int i = 0; i < cloneLong.length; i++) {
+                                    if (value == cloneLong[i]) {
                                         indexFound = i;
                                         break;
                                     }
@@ -223,4 +209,4 @@ public class SortingVector {
                         }
                     }
                 }
-            }
+            
